@@ -83,7 +83,6 @@ public class CreditCardTests {
         buy.findCardHolderError();
         buy.findCVCError();
         assertEquals("Неверный формат", buy.getCardNumberError());
-
     }
 
     @Order(5)
