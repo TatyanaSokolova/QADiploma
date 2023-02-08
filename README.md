@@ -67,3 +67,9 @@
 
 1. Завершить работу SUT в ранее открытом терминале сочетанием клавиш **Ctrl+C**
 2. Завершить работу контейнеров сначала сочетанием клавиш **Ctrl+C**, затем командой **docker-compose down**
+
+### Документация по проекту:
+
+[План автоматизации тестирования веб-сервиса](https://github.com/TatyanaSokolova/QADiploma/blob/master/project%20documents/Plan.md)
+[Отчёт по итогам тестирования](https://github.com/TatyanaSokolova/QADiploma/blob/master/project%20documents/Report.md)
+[Отчёт по итогам автоматизации](https://github.com/TatyanaSokolova/QADiploma/blob/master/project%20documents/Summary.md)
