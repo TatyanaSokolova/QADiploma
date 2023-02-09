@@ -59,8 +59,8 @@
 * для запуска работы с БД MySQL - **java -jar ./artifacts/aqa-shop.jar --spring.datasource.url=jdbc:mysql://localhost:3306/app**
 * для запуска работы с БД PostgreSQL - **java -jar ./artifacts/aqa-shop.jar --spring.datasource.url=jdbc:postgresql://localhost:5432/app**
 6. Открыть консоль двойным нажатие Ctrl и запустить тесты командой:
-* при работе с MySQL - **gradlew clean test allureServe -Dapp=jdbc:mysql://localhost:3306/app**
-* при работе с PostgreSQL - **gradlew clean test allureServe -Dapp=jdbc:postgresql://localhost:5432/app**
+* при работе с MySQL - **gradlew clean test -Dapp=jdbc:mysql://localhost:3306/app**
+* при работе с PostgreSQL - **gradlew clean test -Dapp=jdbc:postgresql://localhost:5432/app**
 7. Для формирования отчета Allure выполнить в консоли команду **gradlew allureServe**
 
 #### Завершение работы с автотестами (в т.ч. для перезапуска автотестов с другой БД)
@@ -70,6 +70,6 @@
 
 ### Документация по проекту:
 
-[План автоматизации тестирования веб-сервиса](https://github.com/TatyanaSokolova/QADiploma/blob/master/project%20documents/Plan.md)
-[Отчёт по итогам тестирования](https://github.com/TatyanaSokolova/QADiploma/blob/master/project%20documents/Report.md)
-[Отчёт по итогам автоматизации](https://github.com/TatyanaSokolova/QADiploma/blob/master/project%20documents/Summary.md)
+1. [План автоматизации тестирования веб-сервиса](https://github.com/TatyanaSokolova/QADiploma/blob/master/project%20documents/Plan.md)
+2. [Отчёт по итогам тестирования](https://github.com/TatyanaSokolova/QADiploma/blob/master/project%20documents/Report.md)
+3. [Отчёт по итогам автоматизации](https://github.com/TatyanaSokolova/QADiploma/blob/master/project%20documents/Summary.md)
