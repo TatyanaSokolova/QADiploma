@@ -61,11 +61,11 @@ public class CreditCardTests {
         offerPage.openByWithCreditCard();
         var buy = new ByWithCreditCard();
         buy.shouldFillFieldsAndSendRequest(null, null, null, null, null);
-        assertEquals("Неверный формат", buy.getCardNumberError());
-        assertEquals("Неверный формат", buy.getMonthError());
-        assertEquals("Неверный формат", buy.getYearError());
-        assertEquals("Поле обязательно для заполнения", buy.getCardholderError());
-        assertEquals("Неверный формат", buy.getCVCError());
+        buy.getCardNumberError("Неверный формат");
+        buy.getMonthError("Неверный формат");
+        buy.getYearError("Неверный формат");
+        buy.getCardholderError("Поле обязательно для заполнения");
+        buy.getCVCError("Неверный формат");
     }
 
     @Test
@@ -78,7 +78,7 @@ public class CreditCardTests {
         buy.findYearError();
         buy.findCardHolderError();
         buy.findCVCError();
-        assertEquals("Неверный формат", buy.getCardNumberError());
+        buy.getCardNumberError("Неверный ключ");
     }
 
     @Test
@@ -91,7 +91,7 @@ public class CreditCardTests {
         buy.findYearError();
         buy.findCardHolderError();
         buy.findCVCError();
-        assertEquals("Неверный формат", buy.getMonthError());
+        buy.getMonthError("Неверный формат");
     }
 
     @Test
@@ -104,7 +104,7 @@ public class CreditCardTests {
         buy.findMonthError();
         buy.findCardHolderError();
         buy.findCVCError();
-        assertEquals("Неверный формат", buy.getYearError());
+        buy.getYearError("Неверный формат");
     }
 
     @Test
@@ -117,7 +117,7 @@ public class CreditCardTests {
         buy.findMonthError();
         buy.findYearError();
         buy.findCVCError();
-        assertEquals("Поле обязательно для заполнения", buy.getCardholderError());
+        buy.getCardholderError("Поле обязательно для заполнения");
     }
 
     @Test
@@ -130,7 +130,7 @@ public class CreditCardTests {
         buy.findMonthError();
         buy.findYearError();
         buy.findCardHolderError();
-        assertEquals("Неверный формат", buy.getCVCError());
+        buy.getCVCError("Неверный формат");
     }
 
     @Test
@@ -161,7 +161,7 @@ public class CreditCardTests {
         buy.findYearError();
         buy.findCardHolderError();
         buy.findCVCError();
-        assertEquals("Неверный формат", buy.getCardNumberError());
+        buy.getCardNumberError("Неверный формат");
     }
 
     @Test
@@ -192,7 +192,7 @@ public class CreditCardTests {
         buy.findYearError();
         buy.findCardHolderError();
         buy.findCVCError();
-        assertEquals("Неверный формат", buy.getCardNumberError());
+        buy.getCardNumberError("Неверный формат");
     }
 
     @Test
@@ -219,7 +219,7 @@ public class CreditCardTests {
         offerPage.openByWithCreditCard();
         var buy = new ByWithCreditCard();
         buy.shouldFillFieldsAndSendRequest(getApprovedCardNumber(), getInvalidMonthBelow(), getYear(), getNameOfCardholder(), getCVC());
-        assertEquals("Неверно указан срок действия карты", buy.getMonthError());
+        buy.getMonthError("Неверно указан срок действия карты");
     }
 
     @Test
@@ -228,7 +228,7 @@ public class CreditCardTests {
         offerPage.openByWithCreditCard();
         var buy = new ByWithCreditCard();
         buy.shouldFillFieldsAndSendRequest(getApprovedCardNumber(), getInvalidMonthAbove(), getYear(), getNameOfCardholder(), getCVC());
-        assertEquals("Неверно указан срок действия карты", buy.getMonthError());
+        buy.getMonthError("Неверно указан срок действия карты");
     }
 
     @Test
@@ -237,7 +237,7 @@ public class CreditCardTests {
         offerPage.openByWithCreditCard();
         var buy = new ByWithCreditCard();
         buy.shouldFillFieldsAndSendRequest(getApprovedCardNumber(), getInvalidMonthOf1Symbol(), getYear(), getNameOfCardholder(), getCVC());
-        assertEquals("Неверный формат", buy.getMonthError());
+        buy.getMonthError("Неверный формат");
     }
 
     @Test
@@ -246,7 +246,7 @@ public class CreditCardTests {
         offerPage.openByWithCreditCard();
         var buy = new ByWithCreditCard();
         buy.shouldFillFieldsAndSendRequest(getApprovedCardNumber(), getMonthFromPreviousDate(), getYearFromPreviousDate(), getNameOfCardholder(), getCVC());
-        assertEquals("Неверно указан срок действия карты", buy.getMonthError());
+        buy.getMonthError("Неверно указан срок действия карты");
     }
 
     @Test
@@ -273,7 +273,7 @@ public class CreditCardTests {
         offerPage.openByWithCreditCard();
         var buy = new ByWithCreditCard();
         buy.shouldFillFieldsAndSendRequest(getApprovedCardNumber(), getMonth(), getPreviousYear(), getNameOfCardholder(), getCVC());
-        assertEquals("Истёк срок действия карты", buy.getYearError());
+        buy.getYearError("Истёк срок действия карты");
     }
 
     @Test
@@ -282,7 +282,7 @@ public class CreditCardTests {
         offerPage.openByWithCreditCard();
         var buy = new ByWithCreditCard();
         buy.shouldFillFieldsAndSendRequest(getApprovedCardNumber(), getMonth(), getNextYear(), getNameOfCardholder(), getCVC());
-        assertEquals("Неверно указан срок действия карты", buy.getYearError());
+        buy.getYearError("Неверно указан срок действия карты");
     }
 
     @Test
@@ -291,7 +291,7 @@ public class CreditCardTests {
         offerPage.openByWithCreditCard();
         var buy = new ByWithCreditCard();
         buy.shouldFillFieldsAndSendRequest(getApprovedCardNumber(), getMonth(), getYear(), getCVC(), getCVC());
-        assertEquals("Поле должно содержать латинские буквы, допустимы дефис и пробел", buy.getCardholderError());
+        buy.getCardholderError("Поле должно содержать латинские буквы, допустимы дефис и пробел");
     }
 
     @Test
@@ -300,7 +300,7 @@ public class CreditCardTests {
         offerPage.openByWithCreditCard();
         var buy = new ByWithCreditCard();
         buy.shouldFillFieldsAndSendRequest(getApprovedCardNumber(), getMonth(), getYear(), getTextOfSymbols(), getCVC());
-        assertEquals("Поле должно содержать латинские буквы, допустимы дефис и пробел", buy.getCardholderError());
+        buy.getCardholderError("Поле должно содержать латинские буквы, допустимы дефис и пробел");
     }
 
     @Test
@@ -309,7 +309,7 @@ public class CreditCardTests {
         offerPage.openByWithCreditCard();
         var buy = new ByWithCreditCard();
         buy.shouldFillFieldsAndSendRequest(getApprovedCardNumber(), getMonth(), getYear(), getTextInRussian(), getCVC());
-        assertEquals("Поле должно содержать латинские буквы, допустимы дефис и пробел", buy.getCardholderError());
+        buy.getCardholderError("Поле должно содержать латинские буквы, допустимы дефис и пробел");
     }
 
     @Test
@@ -318,7 +318,7 @@ public class CreditCardTests {
         offerPage.openByWithCreditCard();
         var buy = new ByWithCreditCard();
         buy.shouldFillFieldsAndSendRequest(getApprovedCardNumber(), getMonth(), getYear(), getShortName(), getCVC());
-        assertEquals("Введите данные в диапазоне от 4 до 60 символов", buy.getCardholderError());
+        buy.getCardholderError("Введите данные в диапазоне от 4 до 60 символов");
     }
 
     @Test
@@ -327,7 +327,7 @@ public class CreditCardTests {
         offerPage.openByWithCreditCard();
         var buy = new ByWithCreditCard();
         buy.shouldFillFieldsAndSendRequest(getApprovedCardNumber(), getMonth(), getYear(), getLongName(), getCVC());
-        assertEquals("Введите данные в диапазоне от 4 до 60 символов", buy.getCardholderError());
+        buy.getCardholderError("Введите данные в диапазоне от 4 до 60 символов");
     }
 
     @Test
@@ -354,7 +354,7 @@ public class CreditCardTests {
         offerPage.openByWithCreditCard();
         var buy = new ByWithCreditCard();
         buy.shouldFillFieldsAndSendRequest(getApprovedCardNumber(), getMonth(), getYear(), getNameOfCardholder(), getCVCOf1Digit());
-        assertEquals("Неверный формат", buy.getCVCError());
+        buy.getCVCError("Неверный формат");
     }
 
     @Test
@@ -363,6 +363,6 @@ public class CreditCardTests {
         offerPage.openByWithCreditCard();
         var buy = new ByWithCreditCard();
         buy.shouldFillFieldsAndSendRequest(getApprovedCardNumber(), getMonth(), getYear(), getNameOfCardholder(), getCVCOf2Digits());
-        assertEquals("Неверный формат", buy.getCVCError());
+        buy.getCVCError("Неверный формат");
     }
 }

@@ -47,45 +47,45 @@ public class ByWithDebitCard {
         CVC.setValue(string5);
     }
 
-    public String getCardNumberError() {
+    public void getCardNumberError(String text) {
         cardNumberError.shouldBe(visible);
-        return cardNumberError.getText().trim();
+        cardNumberError.shouldHave(exactText(text));
     }
 
     public void findCardNumberError() {
         cardNumberError.shouldNotBe(visible);
     }
 
-    public String getMonthError() {
+    public void getMonthError(String text) {
         monthError.shouldBe(visible);
-        return monthError.getText().trim();
+        monthError.shouldHave(exactText(text));
     }
 
     public void findMonthError() {
         monthError.shouldNotBe(visible);
     }
 
-    public String getYearError() {
+    public void getYearError(String text) {
         yearError.shouldBe(visible);
-        return yearError.getText().trim();
+        yearError.shouldHave(exactText(text));
     }
 
     public void findYearError() {
         yearError.shouldNotBe(visible);
     }
 
-    public String getCardholderError() {
+    public void getCardholderError(String text) {
         cardholderError.shouldBe(visible);
-        return cardholderError.getText().trim();
+        cardholderError.shouldHave(exactText(text));
     }
 
     public void findCardHolderError() {
         cardholderError.shouldNotBe(visible);
     }
 
-    public String getCVCError() {
+    public void getCVCError(String text) {
         CVCError.shouldBe(visible);
-        return CVCError.getText().trim();
+        CVCError.shouldHave(exactText(text));
     }
 
     public void findCVCError() {
