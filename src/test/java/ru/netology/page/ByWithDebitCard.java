@@ -1,7 +1,6 @@
 package ru.netology.page;
 
 import com.codeborne.selenide.SelenideElement;
-import ru.netology.data.DataHelper;
 
 import java.time.Duration;
 
@@ -31,249 +30,25 @@ public class ByWithDebitCard {
         heading.shouldBe(visible);
     }
 
-    public void sendValidDataWithApprovedCardNumber() {
-        cardNumber.setValue(DataHelper.getApprovedCardNumber());
-        month.setValue(DataHelper.getMonth());
-        year.setValue(DataHelper.getYear());
-        cardholder.setValue(DataHelper.getNameOfCardholder());
-        CVC.setValue(DataHelper.getCVC());
+    public void shouldFillFieldsAndSendRequest(String String1, String String2, String String3, String String4, String String5) {
+        cardNumber.setValue(String1);
+        month.setValue(String2);
+        year.setValue(String3);
+        cardholder.setValue(String4);
+        CVC.setValue(String5);
         button.click();
     }
 
-    public void sendValidDataWithDeclinedCardNumber() {
-        cardNumber.setValue(DataHelper.getDeclinedCardNumber());
-        month.setValue(DataHelper.getMonth());
-        year.setValue(DataHelper.getYear());
-        cardholder.setValue(DataHelper.getNameOfCardholder());
-        CVC.setValue(DataHelper.getCVC());
-        button.click();
-    }
-
-    public void sendEmptyRequest() {
-        button.click();
-    }
-
-    public void sendValidDataWithoutCardNumber() {
-        month.setValue(DataHelper.getMonth());
-        year.setValue(DataHelper.getYear());
-        cardholder.setValue(DataHelper.getNameOfCardholder());
-        CVC.setValue(DataHelper.getCVC());
-        button.click();
-    }
-
-    public void sendValidDataWithoutMonth() {
-        cardNumber.setValue(DataHelper.getApprovedCardNumber());
-        year.setValue(DataHelper.getYear());
-        cardholder.setValue(DataHelper.getNameOfCardholder());
-        CVC.setValue(DataHelper.getCVC());
-        button.click();
-    }
-
-    public void sendValidDataWithoutYear() {
-        cardNumber.setValue(DataHelper.getApprovedCardNumber());
-        month.setValue(DataHelper.getMonth());
-        cardholder.setValue(DataHelper.getNameOfCardholder());
-        CVC.setValue(DataHelper.getCVC());
-        button.click();
-    }
-
-    public void sendValidDataWithoutCardholder() {
-        cardNumber.setValue(DataHelper.getApprovedCardNumber());
-        month.setValue(DataHelper.getMonth());
-        year.setValue(DataHelper.getYear());
-        CVC.setValue(DataHelper.getCVC());
-        button.click();
-    }
-
-    public void sendValidDataWithoutCVC() {
-        cardNumber.setValue(DataHelper.getApprovedCardNumber());
-        month.setValue(DataHelper.getMonth());
-        year.setValue(DataHelper.getYear());
-        cardholder.setValue(DataHelper.getNameOfCardholder());
-        button.click();
-    }
-
-    public void fillCardNumberWithText() {
-        cardNumber.setValue(DataHelper.getNameOfCardholder());
-    }
-
-    public void fillCardNumberWithSymbols() {
-        cardNumber.setValue(DataHelper.getTextOfSymbols());
-    }
-
-    public void sendValidDataWithShortCardNumber() {
-        cardNumber.setValue(DataHelper.getShortCardNumber());
-        month.setValue(DataHelper.getMonth());
-        year.setValue(DataHelper.getYear());
-        cardholder.setValue(DataHelper.getNameOfCardholder());
-        CVC.setValue(DataHelper.getCVC());
-        button.click();
-    }
-
-    public void fillCardNumberWithLongCardNumber() {
-        cardNumber.setValue(DataHelper.getLongCardNumber());
-    }
-
-    public void sendValidDataWithRandomCardNumber() {
-        cardNumber.setValue(DataHelper.getRandomCardNumber());
-        month.setValue(DataHelper.getMonth());
-        year.setValue(DataHelper.getYear());
-        cardholder.setValue(DataHelper.getNameOfCardholder());
-        CVC.setValue(DataHelper.getCVC());
-        button.click();
-    }
-
-    public void sendValidDataWithInvalidCardNumber() {
-        cardNumber.setValue(DataHelper.getInvalidCardNumber());
-        month.setValue(DataHelper.getMonth());
-        year.setValue(DataHelper.getYear());
-        cardholder.setValue(DataHelper.getNameOfCardholder());
-        CVC.setValue(DataHelper.getCVC());
-        button.click();
-    }
-
-    public void fillMonthWithText() {
-        month.setValue(DataHelper.getNameOfCardholder());
-    }
-
-    public void fillMonthWithSymbols() {
-        month.setValue(DataHelper.getTextOfSymbols());
-    }
-
-    public void sendValidDataWithInvalidMonthBelow() {
-        cardNumber.setValue(DataHelper.getApprovedCardNumber());
-        month.setValue(DataHelper.getInvalidMonthBelow());
-        year.setValue(DataHelper.getYear());
-        cardholder.setValue(DataHelper.getNameOfCardholder());
-        CVC.setValue(DataHelper.getCVC());
-        button.click();
-    }
-
-    public void sendValidDataWithInvalidMonthAbove() {
-        cardNumber.setValue(DataHelper.getApprovedCardNumber());
-        month.setValue(DataHelper.getInvalidMonthAbove());
-        year.setValue(DataHelper.getYear());
-        cardholder.setValue(DataHelper.getNameOfCardholder());
-        CVC.setValue(DataHelper.getCVC());
-        button.click();
-    }
-
-    public void sendValidDataWithInvalidMonthOf1Symbol() {
-        cardNumber.setValue(DataHelper.getApprovedCardNumber());
-        month.setValue(DataHelper.getInvalidMonthOf1Symbol());
-        year.setValue(DataHelper.getYear());
-        cardholder.setValue(DataHelper.getNameOfCardholder());
-        CVC.setValue(DataHelper.getCVC());
-        button.click();
-    }
-
-    public void sendValidDataWithPreviousDate() {
-        cardNumber.setValue(DataHelper.getApprovedCardNumber());
-        month.setValue(DataHelper.getMonthFromPreviousDate());
-        year.setValue(DataHelper.getYearFromPreviousDate());
-        cardholder.setValue(DataHelper.getNameOfCardholder());
-        CVC.setValue(DataHelper.getCVC());
-        button.click();
-    }
-
-    public void fillYearWithText() {
-        year.setValue(DataHelper.getNameOfCardholder());
-    }
-
-    public void fillYearWithSymbols() {
-        year.setValue(DataHelper.getTextOfSymbols());
-    }
-
-    public void sendValidDataWithPreviousYear() {
-        cardNumber.setValue(DataHelper.getApprovedCardNumber());
-        month.setValue(DataHelper.getMonth());
-        year.setValue(DataHelper.getPreviousYear());
-        cardholder.setValue(DataHelper.getNameOfCardholder());
-        CVC.setValue(DataHelper.getCVC());
-        button.click();
-    }
-
-    public void sendValidDataWithNextYear() {
-        cardNumber.setValue(DataHelper.getApprovedCardNumber());
-        month.setValue(DataHelper.getMonth());
-        year.setValue(DataHelper.getNextYear());
-        cardholder.setValue(DataHelper.getNameOfCardholder());
-        CVC.setValue(DataHelper.getCVC());
-        button.click();
-    }
-
-    public void sendValidDataWithDigitsInCardholder() {
-        cardNumber.setValue(DataHelper.getApprovedCardNumber());
-        month.setValue(DataHelper.getMonth());
-        year.setValue(DataHelper.getYear());
-        cardholder.setValue(DataHelper.getCVC());
-        CVC.setValue(DataHelper.getCVC());
-        button.click();
-    }
-
-    public void sendValidDataWithSymbolsInCardholder() {
-        cardNumber.setValue(DataHelper.getApprovedCardNumber());
-        month.setValue(DataHelper.getMonth());
-        year.setValue(DataHelper.getYear());
-        cardholder.setValue(DataHelper.getTextOfSymbols());
-        CVC.setValue(DataHelper.getCVC());
-        button.click();
-    }
-
-    public void sendValidDataWithTextInRussianInCardholder() {
-        cardNumber.setValue(DataHelper.getApprovedCardNumber());
-        month.setValue(DataHelper.getMonth());
-        year.setValue(DataHelper.getYear());
-        cardholder.setValue(DataHelper.getTextInRussian());
-        CVC.setValue(DataHelper.getCVC());
-        button.click();
-    }
-
-    public void sendValidDataWithShortNameInCardholder() {
-        cardNumber.setValue(DataHelper.getApprovedCardNumber());
-        month.setValue(DataHelper.getMonth());
-        year.setValue(DataHelper.getYear());
-        cardholder.setValue(DataHelper.getShortName());
-        CVC.setValue(DataHelper.getCVC());
-        button.click();
-    }
-
-    public void sendValidDataWithLongNameInCardholder() {
-        cardNumber.setValue(DataHelper.getApprovedCardNumber());
-        month.setValue(DataHelper.getMonth());
-        year.setValue(DataHelper.getYear());
-        cardholder.setValue(DataHelper.getLongName());
-        CVC.setValue(DataHelper.getCVC());
-        button.click();
-    }
-
-    public void fillCVCWithText() {
-        CVC.setValue(DataHelper.getNameOfCardholder());
-    }
-
-    public void fillCVCWithSymbols() {
-        CVC.setValue(DataHelper.getTextOfSymbols());
-    }
-
-    public void sendValidDataWithCVCof1Digit() {
-        cardNumber.setValue(DataHelper.getApprovedCardNumber());
-        month.setValue(DataHelper.getMonth());
-        year.setValue(DataHelper.getYear());
-        cardholder.setValue(DataHelper.getNameOfCardholder());
-        CVC.setValue(DataHelper.getCVCOf1Digit());
-        button.click();
-    }
-
-    public void sendValidDataWithCVCof2Digits() {
-        cardNumber.setValue(DataHelper.getApprovedCardNumber());
-        month.setValue(DataHelper.getMonth());
-        year.setValue(DataHelper.getYear());
-        cardholder.setValue(DataHelper.getNameOfCardholder());
-        CVC.setValue(DataHelper.getCVCOf2Digits());
-        button.click();
+    public void shouldFillFields(String String1, String String2, String String3, String String4, String String5) {
+        cardNumber.setValue(String1);
+        month.setValue(String2);
+        year.setValue(String3);
+        cardholder.setValue(String4);
+        CVC.setValue(String5);
     }
 
     public String getCardNumberError() {
+        cardNumberError.shouldBe(visible);
         return cardNumberError.getText().trim();
     }
 
@@ -282,6 +57,7 @@ public class ByWithDebitCard {
     }
 
     public String getMonthError() {
+        monthError.shouldBe(visible);
         return monthError.getText().trim();
     }
 
@@ -290,6 +66,7 @@ public class ByWithDebitCard {
     }
 
     public String getYearError() {
+        yearError.shouldBe(visible);
         return yearError.getText().trim();
     }
 
@@ -298,6 +75,7 @@ public class ByWithDebitCard {
     }
 
     public String getCardholderError() {
+        cardholderError.shouldBe(visible);
         return cardholderError.getText().trim();
     }
 
@@ -306,6 +84,7 @@ public class ByWithDebitCard {
     }
 
     public String getCVCError() {
+        CVCError.shouldBe(visible);
         return CVCError.getText().trim();
     }
 
