@@ -30,21 +30,21 @@ public class ByWithDebitCard {
         heading.shouldBe(visible);
     }
 
-    public void shouldFillFieldsAndSendRequest(String String1, String String2, String String3, String String4, String String5) {
-        cardNumber.setValue(String1);
-        month.setValue(String2);
-        year.setValue(String3);
-        cardholder.setValue(String4);
-        CVC.setValue(String5);
+    public void shouldFillFieldsAndSendRequest(String string1, String string2, String string3, String string4, String string5) {
+        cardNumber.setValue(string1);
+        month.setValue(string2);
+        year.setValue(string3);
+        cardholder.setValue(string4);
+        CVC.setValue(string5);
         button.click();
     }
 
-    public void shouldFillFields(String String1, String String2, String String3, String String4, String String5) {
-        cardNumber.setValue(String1);
-        month.setValue(String2);
-        year.setValue(String3);
-        cardholder.setValue(String4);
-        CVC.setValue(String5);
+    public void shouldFillFields(String string1, String string2, String string3, String string4, String string5) {
+        cardNumber.setValue(string1);
+        month.setValue(string2);
+        year.setValue(string3);
+        cardholder.setValue(string4);
+        CVC.setValue(string5);
     }
 
     public String getCardNumberError() {
